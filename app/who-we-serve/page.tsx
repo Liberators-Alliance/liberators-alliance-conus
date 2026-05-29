@@ -1,4 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Who We Serve | Child Survivors of Trafficking & Trauma | Saving Arrows",
+  description:
+    "Saving Arrows serves children under 18 who are survivors of trafficking, exploitation, or complex trauma. Learn about our day program model, eligibility criteria, and the partner systems who refer to us.",
+  alternates: { canonical: "https://conus.liberators-alliance.org/who-we-serve" },
+  openGraph: {
+    title: "Who We Serve | Saving Arrows",
+    description:
+      "Serving children under 18 who are survivors of trafficking, exploitation, or complex trauma. Day program model, eligibility criteria, and referral partner information.",
+    url: "https://conus.liberators-alliance.org/who-we-serve",
+  },
+  twitter: {
+    title: "Who We Serve | Saving Arrows",
+    description:
+      "Serving children under 18 who are survivors of trafficking, exploitation, or complex trauma. Day program model, eligibility criteria, and referral partner information.",
+  },
+};
 
 const partners = [
   "K–12 schools and school counselors",

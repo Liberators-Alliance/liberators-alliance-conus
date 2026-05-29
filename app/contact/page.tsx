@@ -1,3 +1,23 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us | Get in Touch with Saving Arrows | Castle Rock, CO",
+  description:
+    "Contact Saving Arrows for general inquiries, referral inquiries, or partnership opportunities. Email contactus@liberators-alliance.org. Located in Castle Rock, Colorado.",
+  alternates: { canonical: "https://conus.liberators-alliance.org/contact" },
+  openGraph: {
+    title: "Contact Us | Saving Arrows",
+    description:
+      "Reach the Saving Arrows team for general questions, child referrals, or partnership inquiries. Based in Castle Rock, Colorado.",
+    url: "https://conus.liberators-alliance.org/contact",
+  },
+  twitter: {
+    title: "Contact Us | Saving Arrows",
+    description:
+      "Reach the Saving Arrows team for general questions, child referrals, or partnership inquiries. Based in Castle Rock, Colorado.",
+  },
+};
+
 const inquiries = [
   {
     type: "General Inquiry",

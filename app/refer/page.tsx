@@ -1,3 +1,23 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Refer a Child | Caseworker & Professional Referrals | Saving Arrows",
+  description:
+    "Caseworkers, school counselors, judges, and child welfare professionals: learn how to refer a child to the Saving Arrows day program. Three-step process, eligibility criteria, and intake contact information.",
+  alternates: { canonical: "https://conus.liberators-alliance.org/refer" },
+  openGraph: {
+    title: "Refer a Child | Saving Arrows",
+    description:
+      "For caseworkers, counselors, and child welfare professionals. Learn how to refer a child survivor to the Saving Arrows day program — three steps, confidential intake.",
+    url: "https://conus.liberators-alliance.org/refer",
+  },
+  twitter: {
+    title: "Refer a Child | Saving Arrows",
+    description:
+      "For caseworkers, counselors, and child welfare professionals. Learn how to refer a child survivor to the Saving Arrows day program — three steps, confidential intake.",
+  },
+};
+
 const steps = [
   {
     number: "01",

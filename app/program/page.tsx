@@ -1,4 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Our Program | Equestrian Therapy, Trauma-Informed Care & Clinical Treatment",
+  description:
+    "Learn how the Saving Arrows day program integrates equestrian therapy, trauma-informed care, and licensed clinical treatment into a unified healing model for child survivors in Castle Rock, Colorado.",
+  alternates: { canonical: "https://conus.liberators-alliance.org/program" },
+  openGraph: {
+    title: "Our Program | Saving Arrows",
+    description:
+      "Equestrian therapy, trauma-informed care, and licensed clinical treatment — integrated into a structured day program for child survivors of trafficking and trauma.",
+    url: "https://conus.liberators-alliance.org/program",
+  },
+  twitter: {
+    title: "Our Program | Saving Arrows",
+    description:
+      "Equestrian therapy, trauma-informed care, and licensed clinical treatment — integrated into a structured day program for child survivors of trafficking and trauma.",
+  },
+};
 
 const pillars = [
   {
@@ -62,6 +81,7 @@ export default function Program() {
               <img
                 src={pillar.image}
                 alt={pillar.imageAlt}
+              loading="lazy"
                 className="rounded-2xl w-full object-cover h-72 shadow-md"
               />
             </div>
@@ -109,7 +129,7 @@ export default function Program() {
           <div className="flex-1">
             <img
               src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80"
-              alt="40-acre farm in Castle Rock, Colorado"
+              alt="The Saving Arrows 40-acre farm in Castle Rock, Colorado, providing a purposeful healing environment"
               className="rounded-2xl w-full object-cover h-72 shadow-lg"
             />
           </div>

@@ -1,3 +1,23 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Partner With Us | Clinical & Community Partnerships | Saving Arrows",
+  description:
+    "Saving Arrows partners with licensed clinicians, equine-assisted therapy practitioners, community organizations, and academic researchers. Learn about clinical collaboration, referral relationships, and research participation.",
+  alternates: { canonical: "https://conus.liberators-alliance.org/partner" },
+  openGraph: {
+    title: "Partner With Us | Saving Arrows",
+    description:
+      "Clinical collaboration, referral partnerships, and research participation opportunities for therapists, practitioners, and organizations aligned with trauma-informed healing.",
+    url: "https://conus.liberators-alliance.org/partner",
+  },
+  twitter: {
+    title: "Partner With Us | Saving Arrows",
+    description:
+      "Clinical collaboration, referral partnerships, and research participation opportunities for therapists, practitioners, and organizations aligned with trauma-informed healing.",
+  },
+};
+
 const partnerTypes = [
   {
     title: "Clinical Partners",

@@ -1,3 +1,23 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us | Liberators Alliance & Saving Arrows | Castle Rock, CO",
+  description:
+    "Saving Arrows is a program of Liberators Alliance, an organization with over five years of operational history establishing clinical and programmatic frameworks for trauma-informed aftercare. National headquarters in Denver, Colorado.",
+  alternates: { canonical: "https://conus.liberators-alliance.org/about" },
+  openGraph: {
+    title: "About Saving Arrows | Liberators Alliance",
+    description:
+      "The history, values, and organizational foundation behind Saving Arrows — a program of Liberators Alliance, headquartered in Denver, Colorado.",
+    url: "https://conus.liberators-alliance.org/about",
+  },
+  twitter: {
+    title: "About Saving Arrows | Liberators Alliance",
+    description:
+      "The history, values, and organizational foundation behind Saving Arrows — a program of Liberators Alliance, headquartered in Denver, Colorado.",
+  },
+};
+
 export default function About() {
   return (
     <>
@@ -18,7 +38,7 @@ export default function About() {
           <div className="flex-1">
             <img
               src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&q=80"
-              alt="Professional organizational setting"
+              alt="The Liberators Alliance organizational headquarters, reflecting five years of operational experience in trauma-informed aftercare"
               className="rounded-2xl w-full object-cover h-72 shadow-md"
             />
           </div>

@@ -1,3 +1,23 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Approach | Evidence-Based Equestrian Therapy for Trauma Recovery",
+  description:
+    "Saving Arrows uses equestrian-assisted therapy, TF-CBT, EMDR, and somatic approaches grounded in SAMHSA trauma-informed care principles to support lasting recovery for child survivors.",
+  alternates: { canonical: "https://conus.liberators-alliance.org/approach" },
+  openGraph: {
+    title: "Our Approach | Saving Arrows",
+    description:
+      "Evidence-based equestrian therapy, TF-CBT, EMDR, and trauma-informed care principles — the clinical framework behind the Saving Arrows healing program.",
+    url: "https://conus.liberators-alliance.org/approach",
+  },
+  twitter: {
+    title: "Our Approach | Saving Arrows",
+    description:
+      "Evidence-based equestrian therapy, TF-CBT, EMDR, and trauma-informed care principles — the clinical framework behind the Saving Arrows healing program.",
+  },
+};
+
 export default function Approach() {
   return (
     <>
@@ -27,7 +47,7 @@ export default function Approach() {
           <div className="flex-1">
             <img
               src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&q=80"
-              alt="Equestrian therapy in practice"
+              alt="A child engaged in equestrian-assisted therapy, working alongside a horse in a structured outdoor setting"
               className="rounded-2xl w-full object-cover h-72 shadow-md"
             />
           </div>

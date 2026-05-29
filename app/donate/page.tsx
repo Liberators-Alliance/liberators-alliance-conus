@@ -1,3 +1,23 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Donate | Support Healing for Child Survivors | Saving Arrows",
+  description:
+    "Your gift funds equestrian therapy, licensed clinical treatment, and the safe healing environment that makes recovery possible for child survivors of trafficking and trauma at Saving Arrows.",
+  alternates: { canonical: "https://conus.liberators-alliance.org/donate" },
+  openGraph: {
+    title: "Donate | Saving Arrows",
+    description:
+      "Give a child a future worth moving toward. Your support funds equestrian therapy, clinical care, and the 40-acre healing environment at Saving Arrows.",
+    url: "https://conus.liberators-alliance.org/donate",
+  },
+  twitter: {
+    title: "Donate | Saving Arrows",
+    description:
+      "Give a child a future worth moving toward. Your support funds equestrian therapy, clinical care, and the 40-acre healing environment at Saving Arrows.",
+  },
+};
+
 export default function Donate() {
   return (
     <>
@@ -57,7 +77,7 @@ export default function Donate() {
         <div className="max-w-3xl mx-auto text-center">
           <img
             src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80"
-            alt="Open fields at the Castle Rock farm"
+            alt="Open fields at the Saving Arrows farm in Castle Rock, Colorado — a restorative landscape for healing"
             className="rounded-2xl w-full object-cover h-64 shadow-md mb-10"
           />
           <h2 className="text-2xl font-bold text-[#1B3A5C] mb-4">
