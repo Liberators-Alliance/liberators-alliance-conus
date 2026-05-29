@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import PageSchema from "../components/PageSchema";
+
+const siteUrl = "https://conus.liberators-alliance.org";
 
 export const metadata: Metadata = {
   title: "Contact Us | Get in Touch with Saving Arrows | Castle Rock, CO",
@@ -36,9 +39,39 @@ const inquiries = [
   },
 ];
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${siteUrl}/#localbusiness`,
+  name: "Saving Arrows — A Liberators Alliance Program",
+  description:
+    "Anti-trafficking nonprofit providing equestrian therapy and clinical treatment for child survivors of trafficking and trauma.",
+  url: siteUrl,
+  email: "contactus@liberators-alliance.org",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Castle Rock",
+    addressRegion: "CO",
+    addressCountry: "US",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 39.3722,
+    longitude: -104.8561,
+  },
+  openingHours: "Mo-Fr 08:00-17:00",
+  priceRange: "Free",
+};
+
 export default function Contact() {
   return (
     <>
+      <PageSchema
+        pageName="Contact Saving Arrows"
+        pageDescription="Contact the Saving Arrows anti-trafficking nonprofit for general questions, child referrals, or partnership inquiries. Email contactus@liberators-alliance.org. Castle Rock, Colorado."
+        pageUrl={`${siteUrl}/contact`}
+        additionalSchemas={[localBusinessSchema]}
+      />
       {/* Hero */}
       <section className="bg-gradient-to-r from-[#1B3A5C] to-[#2E6DA4] text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">

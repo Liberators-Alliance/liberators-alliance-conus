@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PageSchema from "../components/PageSchema";
+
+const siteUrl = "https://conus.liberators-alliance.org";
 
 export const metadata: Metadata = {
   title: "Our Program | Equestrian Therapy, Trauma-Informed Care & Clinical Treatment",
@@ -52,9 +55,51 @@ const pillars = [
   },
 ];
 
+const serviceSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Equestrian-Assisted Therapy for Trafficking Survivors",
+    serviceType: "Equestrian-Assisted Psychotherapy (EAP)",
+    description:
+      "Evidence-informed equestrian therapy for child survivors of trafficking and trauma. Credentialed under PATH Intl. and EAGALA standards. Provided as part of the Saving Arrows day program in Castle Rock, Colorado.",
+    provider: { "@id": `${siteUrl}/#organization` },
+    areaServed: { "@type": "State", name: "Colorado" },
+    audience: { "@type": "Audience", name: "Child survivors of trafficking and complex trauma under age 18" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Trauma-Informed Care Program",
+    serviceType: "Trauma-Informed Care",
+    description:
+      "Organizational trauma-informed framework based on SAMHSA's six principles — safety, trustworthiness, peer support, collaboration, empowerment, and cultural humility — applied across all programming and staff interactions.",
+    provider: { "@id": `${siteUrl}/#organization` },
+    areaServed: { "@type": "State", name: "Colorado" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Licensed Clinical Treatment for Child Trauma Survivors",
+    serviceType: "Mental Health Treatment",
+    description:
+      "Individualized, evidence-based mental health treatment provided by licensed clinicians. Modalities include Trauma-Focused CBT (TF-CBT), EMDR, and somatic therapies tailored to each child survivor's needs.",
+    provider: { "@id": `${siteUrl}/#organization` },
+    areaServed: { "@type": "State", name: "Colorado" },
+    audience: { "@type": "Audience", name: "Children under 18 with trauma, PTSD, and complex trauma histories" },
+  },
+];
+
 export default function Program() {
   return (
     <>
+      <PageSchema
+        pageName="Our Program"
+        pageDescription="Equestrian therapy, trauma-informed care, and licensed clinical treatment integrated into a structured day program for child survivors of trafficking in Castle Rock, Colorado."
+        pageUrl={`${siteUrl}/program`}
+        additionalSchemas={serviceSchemas}
+      />
+
       {/* Hero */}
       <section className="bg-gradient-to-r from-[#1B3A5C] to-[#2E6DA4] text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
@@ -149,19 +194,49 @@ export default function Program() {
         </div>
       </section>
 
+      {/* Credentials callout */}
+      <section className="bg-[#E8F1F8] py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-xl font-bold text-[#1B3A5C] mb-4">Clinically credentialed. Evidence-based.</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-sm leading-relaxed">
+            Saving Arrows&rsquo; equestrian therapy programming aligns with standards established by{" "}
+            <a href="https://pathintl.org" target="_blank" rel="noopener noreferrer" className="text-[#2E6DA4] underline underline-offset-2 hover:text-[#1B3A5C]">PATH Intl.</a>{" "}
+            and{" "}
+            <a href="https://www.eagala.org" target="_blank" rel="noopener noreferrer" className="text-[#2E6DA4] underline underline-offset-2 hover:text-[#1B3A5C]">EAGALA</a>.
+            Clinical services use modalities recommended by{" "}
+            <a href="https://www.samhsa.gov" target="_blank" rel="noopener noreferrer" className="text-[#2E6DA4] underline underline-offset-2 hover:text-[#1B3A5C]">SAMHSA</a>{" "}
+            and the{" "}
+            <a href="https://www.who.int" target="_blank" rel="noopener noreferrer" className="text-[#2E6DA4] underline underline-offset-2 hover:text-[#1B3A5C]">World Health Organization</a>.
+            Learn more about{" "}
+            <Link href="/approach" className="text-[#2E6DA4] underline underline-offset-2 hover:text-[#1B3A5C]">our clinical approach →</Link>
+          </p>
+        </div>
+      </section>
+
       {/* Refer CTA */}
-      <section className="bg-[#E8F1F8] py-16 px-4 sm:px-6 lg:px-8 text-center">
+      <section className="bg-white py-16 px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-2xl font-bold text-[#1B3A5C] mb-4">Know a child who could benefit?</h2>
         <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-          We work with schools, courts, foster care systems, and community advocates to connect children with the care
-          they need.
+          We work with schools, courts, foster care systems, and community advocates to connect{" "}
+          <Link href="/who-we-serve" className="text-[#2E6DA4] underline underline-offset-2 hover:text-[#1B3A5C]">
+            child survivors of trafficking and trauma
+          </Link>{" "}
+          with the care they need.
         </p>
-        <Link
-          href="/refer"
-          className="inline-block bg-[#2E6DA4] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#1B3A5C] transition-colors"
-        >
-          Make a Referral
-        </Link>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link
+            href="/refer"
+            className="inline-block bg-[#2E6DA4] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#1B3A5C] transition-colors"
+          >
+            Make a Referral
+          </Link>
+          <Link
+            href="/donate"
+            className="inline-block border-2 border-[#2E6DA4] text-[#2E6DA4] px-8 py-3 rounded-full font-semibold hover:bg-[#E8F1F8] transition-colors"
+          >
+            Donate to Fund the Program
+          </Link>
+        </div>
       </section>
     </>
   );

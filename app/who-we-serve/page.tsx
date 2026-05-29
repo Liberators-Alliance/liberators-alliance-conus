@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PageSchema from "../components/PageSchema";
+
+const siteUrl = "https://conus.liberators-alliance.org";
 
 export const metadata: Metadata = {
   title: "Who We Serve | Child Survivors of Trafficking & Trauma | Saving Arrows",
@@ -32,6 +35,11 @@ const partners = [
 export default function WhoWeServe() {
   return (
     <>
+      <PageSchema
+        pageName="Who We Serve"
+        pageDescription="Saving Arrows serves children under 18 who are survivors of sex trafficking, labor trafficking, exploitation, or complex trauma. Day program model, eligibility criteria, and referral partner information."
+        pageUrl={`${siteUrl}/who-we-serve`}
+      />
       {/* Hero */}
       <section className="bg-gradient-to-r from-[#1B3A5C] to-[#2E6DA4] text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">

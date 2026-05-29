@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import PageSchema from "../components/PageSchema";
+
+const siteUrl = "https://conus.liberators-alliance.org";
 
 export const metadata: Metadata = {
   title: "Refer a Child | Caseworker & Professional Referrals | Saving Arrows",
@@ -42,6 +45,11 @@ const steps = [
 export default function Refer() {
   return (
     <>
+      <PageSchema
+        pageName="Refer a Child"
+        pageDescription="Three-step referral process for caseworkers, school counselors, judges, and child welfare professionals connecting child survivors of trafficking and trauma to the Saving Arrows program."
+        pageUrl={`${siteUrl}/refer`}
+      />
       {/* Hero */}
       <section className="bg-gradient-to-r from-[#1B3A5C] to-[#2E6DA4] text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">

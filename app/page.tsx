@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PageSchema from "./components/PageSchema";
+
+const siteUrl = "https://conus.liberators-alliance.org";
 
 export const metadata: Metadata = {
-  title: "Saving Arrows | Trauma-Informed Healing for Child Survivors | Castle Rock, CO",
+  title: "Saving Arrows | Anti-Trafficking Nonprofit | Trauma Healing for Child Survivors",
   description:
-    "Saving Arrows is a structured day program offering equestrian therapy, trauma-informed care, and clinical treatment for children under 18 who have survived trafficking and trauma. Located on a 40-acre farm in Castle Rock, Colorado.",
-  alternates: {
-    canonical: "https://conus.liberators-alliance.org",
-  },
+    "Saving Arrows is an anti-trafficking nonprofit providing equestrian therapy, trauma-informed care, and clinical treatment for child survivors of trafficking and trauma. Based in Castle Rock, Colorado. Donate, refer, or partner with us.",
+  alternates: { canonical: siteUrl },
   openGraph: {
-    title: "Saving Arrows | Restoring direction. Rebuilding futures.",
+    title: "Saving Arrows | Anti-Trafficking Nonprofit | Restoring direction. Rebuilding futures.",
     description:
-      "A structured day program offering equestrian therapy, trauma-informed care, and clinical treatment for child survivors of trafficking and trauma. Castle Rock, Colorado.",
-    url: "https://conus.liberators-alliance.org",
+      "An anti-trafficking nonprofit providing equestrian therapy and clinical healing for child survivors of trafficking and trauma. Castle Rock, Colorado. Donate or get involved today.",
+    url: siteUrl,
   },
   twitter: {
-    title: "Saving Arrows | Restoring direction. Rebuilding futures.",
+    title: "Saving Arrows | Anti-Trafficking Nonprofit | Restoring direction. Rebuilding futures.",
     description:
-      "A structured day program offering equestrian therapy, trauma-informed care, and clinical treatment for child survivors of trafficking and trauma. Castle Rock, Colorado.",
+      "Equestrian therapy and clinical healing for child survivors of trafficking and trauma. Fight trafficking by supporting Saving Arrows in Castle Rock, Colorado.",
   },
 };
 
@@ -30,7 +31,7 @@ const pillars = [
     ),
     title: "Equestrian Therapy",
     description:
-      "Structured, evidence-informed interaction with horses builds trust, emotional regulation, and self-efficacy in ways that traditional talk therapy cannot reach alone.",
+      "Structured, evidence-informed interaction with horses builds trust, emotional regulation, and self-efficacy in ways that traditional talk therapy cannot reach alone — particularly for trafficking survivors.",
   },
   {
     icon: (
@@ -40,7 +41,7 @@ const pillars = [
     ),
     title: "Trauma-Informed Care",
     description:
-      "Every interaction, environment, and relationship within the program is designed around safety, trustworthiness, choice, and empowerment — the pillars of trauma-informed practice.",
+      "Every interaction, environment, and relationship within the program is designed around safety, trustworthiness, choice, and empowerment — restoring what exploitation took.",
   },
   {
     icon: (
@@ -50,7 +51,7 @@ const pillars = [
     ),
     title: "Clinical Treatment",
     description:
-      "Licensed clinical professionals provide individualized, evidence-based mental health care fully integrated with the equestrian and experiential components of the program.",
+      "Licensed clinical professionals provide individualized, evidence-based mental health care — TF-CBT, EMDR, and somatic therapies — integrated with equestrian and experiential components.",
   },
 ];
 
@@ -58,12 +59,12 @@ const faqs = [
   {
     question: "What is Saving Arrows?",
     answer:
-      "Saving Arrows is a structured day program providing equestrian therapy, trauma-informed care, and clinical treatment for children under 18 who have survived trafficking and trauma. The program is operated by Liberators Alliance and is based on a 40-acre farm in Castle Rock, Colorado.",
+      "Saving Arrows is an anti-trafficking nonprofit and structured day program providing equestrian therapy, trauma-informed care, and licensed clinical treatment for children under 18 who have survived trafficking and trauma. The program is operated by Liberators Alliance and is based on a 40-acre farm in Castle Rock, Colorado.",
   },
   {
-    question: "Who is eligible to participate in the Saving Arrows program?",
+    question: "Who is eligible to participate in the program?",
     answer:
-      "Saving Arrows serves children and adolescents under 18 who are survivors of trafficking, exploitation, or complex trauma. Participants may be referred by schools, foster care systems, juvenile courts, child advocacy centers, or community organizations. Each referral begins with an intake conversation to assess fit.",
+      "Saving Arrows serves children and adolescents under 18 who are survivors of sex trafficking, labor trafficking, exploitation, or complex trauma. Participants may be referred by schools, foster care systems, juvenile courts, child advocacy centers, or community organizations. Each referral begins with an intake conversation to assess fit.",
   },
   {
     question: "How does the day program model work?",
@@ -71,14 +72,14 @@ const faqs = [
       "Unlike residential programs, Saving Arrows is a day program — participants attend structured programming during the day and return home or to their placement each evening. This model preserves connection to family and community while providing intensive, clinical-grade care. The program integrates equestrian therapy sessions, individual clinical therapy, group processing, and life skills activities.",
   },
   {
-    question: "What does equestrian therapy have to do with trauma recovery?",
+    question: "Why does Saving Arrows use equestrian therapy for trafficking survivors?",
     answer:
-      "Equestrian-assisted therapy (EAT) is evidence-informed and particularly effective for trauma populations. Horses respond to the nervous system, not verbal narrative — they mirror a person's actual emotional state and provide immediate, honest biofeedback. For children who have been exploited, this non-judgmental, attuned relationship can create breakthroughs that traditional talk therapy alone may not reach.",
+      "Equestrian-assisted therapy is evidence-informed and particularly effective for trafficking survivors. Horses respond to the nervous system, not verbal narrative — they mirror actual emotional state and provide immediate, honest biofeedback. For children who have been exploited and learned to mask their emotions around adults, this non-judgmental, attuned relationship can create breakthroughs that traditional talk therapy alone may not reach.",
   },
   {
-    question: "How do I refer a child to Saving Arrows?",
+    question: "How can I donate to support anti-trafficking work?",
     answer:
-      "To begin the referral process, contact our team at contactus@liberators-alliance.org with the subject line \"Referral Inquiry.\" A member of our clinical intake team will respond within two business days to schedule a confidential conversation and assess whether Saving Arrows is the right fit.",
+      "Donations to Saving Arrows fund equestrian therapy programming, licensed clinical treatment, and the 40-acre healing environment that makes recovery possible. Visit our donate page to give. Every gift directly supports a child survivor of trafficking on their path to restoration.",
   },
 ];
 
@@ -88,19 +89,18 @@ const faqSchema = {
   mainEntity: faqs.map((faq) => ({
     "@type": "Question",
     name: faq.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.answer,
-    },
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
   })),
 };
 
 export default function Home() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      <PageSchema
+        pageName="Saving Arrows — Home"
+        pageDescription="Anti-trafficking nonprofit providing equestrian therapy, trauma-informed care, and clinical treatment for child survivors in Castle Rock, Colorado."
+        pageUrl={siteUrl}
+        additionalSchemas={[faqSchema]}
       />
 
       {/* Hero */}
@@ -114,6 +114,9 @@ export default function Home() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-40">
           <div className="max-w-2xl">
+            <p className="text-[#F0A500] font-semibold text-sm uppercase tracking-widest mb-4">
+              Anti-Trafficking Nonprofit · Castle Rock, Colorado
+            </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Restoring direction.<br />Rebuilding futures.
             </h1>
@@ -130,13 +133,23 @@ export default function Home() {
                 Learn About Our Program
               </Link>
               <Link
-                href="/refer"
-                className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
+                href="/donate"
+                className="bg-[#F0A500] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#d4940a] transition-colors"
               >
-                Refer a Child
+                Donate to Fight Trafficking
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Mission statement strip */}
+      <section className="bg-[#1B3A5C] py-6 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-blue-200 text-sm md:text-base">
+            <span className="text-white font-semibold">Fighting child trafficking</span> through restoration, not just rescue —
+            clinical healing grounded in equestrian therapy and trauma-informed care.
+          </p>
         </div>
       </section>
 
@@ -146,7 +159,8 @@ export default function Home() {
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-[#1B3A5C] mb-4">A three-pillar approach to healing</h2>
             <p className="text-gray-600 max-w-xl mx-auto">
-              Saving Arrows integrates clinical care with experiential and relational approaches to meet children where they are.
+              Saving Arrows integrates clinical care with experiential and relational approaches to meet child survivors
+              of trafficking where they are.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -161,6 +175,11 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className="text-center mt-10">
+            <Link href="/program" className="text-[#2E6DA4] font-semibold hover:text-[#1B3A5C] transition-colors underline underline-offset-4">
+              See how the full program works →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -170,26 +189,39 @@ export default function Home() {
           <div className="flex-1">
             <img
               src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80"
-              alt="Open farmland at the Saving Arrows 40-acre facility in Castle Rock, Colorado"
+              alt="Open farmland at the Saving Arrows 40-acre facility in Castle Rock, Colorado — a healing environment for trafficking survivors"
               className="rounded-2xl w-full object-cover h-64 md:h-80 shadow-md"
             />
           </div>
           <div className="flex-1 max-w-lg">
             <h2 className="text-3xl font-bold text-[#1B3A5C] mb-4">Who we serve</h2>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              Saving Arrows serves children under 18 who are survivors of trauma, trafficking, or exploitation. Our day
-              program model allows participants to maintain connection to existing family and community support systems
-              while receiving intensive, integrated care.
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Saving Arrows serves children under 18 who are survivors of sex trafficking, labor trafficking, exploitation,
+              or complex trauma. Our day program model allows participants to maintain connection to existing family and
+              community support systems while receiving intensive, integrated care.
             </p>
-            <Link
-              href="/who-we-serve"
-              className="inline-flex items-center gap-2 text-[#2E6DA4] font-semibold hover:text-[#1B3A5C] transition-colors"
-            >
-              Learn who qualifies
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              We work with schools, foster care systems, juvenile courts, child advocacy centers, and community
+              organizations to connect children with the healing they need.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/who-we-serve"
+                className="inline-flex items-center gap-2 text-[#2E6DA4] font-semibold hover:text-[#1B3A5C] transition-colors"
+              >
+                Learn who qualifies
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+              <span className="text-gray-300">|</span>
+              <Link href="/refer" className="inline-flex items-center gap-2 text-[#2E6DA4] font-semibold hover:text-[#1B3A5C] transition-colors">
+                Refer a child
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -197,18 +229,28 @@ export default function Home() {
       {/* Donor CTA */}
       <section className="bg-gradient-to-r from-[#1B3A5C] to-[#2E6DA4] py-20 px-4 sm:px-6 lg:px-8 text-white text-center">
         <div className="max-w-2xl mx-auto">
+          <p className="text-[#F0A500] font-semibold text-sm uppercase tracking-widest mb-3">Fight trafficking. Fund healing.</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Your support gives a child a future worth moving toward.
           </h2>
           <p className="text-blue-200 text-lg mb-8">
-            Every gift funds the clinical care, equestrian programming, and safe environment that makes healing possible.
+            Every dollar you give directly funds equestrian therapy, licensed clinical treatment, and the safe
+            healing environment that makes recovery real for child survivors of trafficking.
           </p>
-          <Link
-            href="/donate"
-            className="inline-block bg-[#F0A500] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#d4940a] transition-colors shadow-lg"
-          >
-            Donate Today
-          </Link>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/donate"
+              className="inline-block bg-[#F0A500] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#d4940a] transition-colors shadow-lg"
+            >
+              Donate to Fight Trafficking
+            </Link>
+            <Link
+              href="/about"
+              className="inline-block border-2 border-white text-white px-6 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors"
+            >
+              About Our Organization
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -218,7 +260,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#1B3A5C] mb-3">Frequently asked questions</h2>
             <p className="text-gray-600">
-              Answers to common questions from families, professionals, and supporters.
+              Answers to common questions from donors, families, and referring professionals.
             </p>
           </div>
           <dl className="divide-y divide-gray-200">
@@ -229,6 +271,11 @@ export default function Home() {
               </div>
             ))}
           </dl>
+          <div className="mt-8 text-center">
+            <Link href="/contact" className="text-[#2E6DA4] font-semibold hover:text-[#1B3A5C] underline underline-offset-4 transition-colors">
+              Have another question? Contact us →
+            </Link>
+          </div>
         </div>
       </section>
     </>

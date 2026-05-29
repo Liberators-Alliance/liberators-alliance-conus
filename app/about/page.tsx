@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import PageSchema from "../components/PageSchema";
+
+const siteUrl = "https://conus.liberators-alliance.org";
 
 export const metadata: Metadata = {
   title: "About Us | Liberators Alliance & Saving Arrows | Castle Rock, CO",
@@ -21,13 +25,18 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <>
+      <PageSchema
+        pageName="About Saving Arrows"
+        pageDescription="History, values, and organizational foundation of Saving Arrows — an anti-trafficking nonprofit and program of Liberators Alliance, headquartered in Denver, Colorado."
+        pageUrl={`${siteUrl}/about`}
+      />
       {/* Hero */}
       <section className="bg-gradient-to-r from-[#1B3A5C] to-[#2E6DA4] text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About Saving Arrows</h1>
           <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-            A program rooted in operational experience, clinical credibility, and a long-term commitment to children
-            who have survived the worst.
+            An anti-trafficking nonprofit rooted in operational experience, clinical credibility, and a long-term
+            commitment to children who have survived trafficking and exploitation.
           </p>
         </div>
       </section>
@@ -112,10 +121,24 @@ export default function About() {
             accessibility, and distance from urban trauma environments. Liberators Alliance national headquarters is
             located in Denver, Colorado.
           </p>
-          <p className="text-blue-200 leading-relaxed max-w-2xl mx-auto">
-            Colorado represents both a strategic base for organizational operations and a community we are deeply
+          <p className="text-blue-200 leading-relaxed max-w-2xl mx-auto mb-8">
+            Colorado represents both a strategic base for anti-trafficking operations and a community we are deeply
             committed to serving well.
           </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/donate"
+              className="inline-block bg-[#F0A500] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#d4940a] transition-colors"
+            >
+              Support Our Anti-Trafficking Work
+            </Link>
+            <Link
+              href="/program"
+              className="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
+            >
+              Learn About Our Program
+            </Link>
+          </div>
         </div>
       </section>
     </>
