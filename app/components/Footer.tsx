@@ -23,7 +23,7 @@ export default function Footer() {
           {/* Navigation */}
           <div>
             <h4 className="font-semibold text-sm uppercase tracking-wider text-blue-300 mb-4">Navigate</h4>
-            <nav className="flex flex-col gap-2">
+            <nav className="grid grid-cols-2 gap-x-6 gap-y-2">
               {[
                 { href: "/program", label: "Our Program" },
                 { href: "/approach", label: "Our Approach" },
